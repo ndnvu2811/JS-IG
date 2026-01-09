@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Montserrat Font Family ===== */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/components/font/Montserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/components/font/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/components/font/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/components/font/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/components/font/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+/* CRITICAL FIX: Prevent window-level scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+  position: fixed;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.instagram-gradient-text {
+    background: linear-gradient(45deg, #833AB4, #E1306C, #F77737);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.btn-instagram {
+    background: linear-gradient(45deg, #833AB4, #E1306C, #F77737);
+    color: white;
+    transition: opacity 0.3s ease;
+}
+.btn-instagram:hover {
+    opacity: 0.9;
+}
+
+/* ===== Custom Scrollbar - Modern Style ===== */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.7);
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.4) transparent;
+}
+
+/* Dark mode specific */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.5);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.8);
+}
+
+.table-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Light mode scrollbar */
+html:not(.dark) .table-scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f5f9; /* slate-100 */
+}
+html:not(.dark) .table-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #94a3b8; /* slate-400 */
+    border-radius: 4px;
+}
+html:not(.dark) .table-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #64748b; /* slate-500 */
+}
+
+/* Dark mode scrollbar */
+html.dark .table-scrollbar::-webkit-scrollbar-track {
+    background-color: #1e293b; /* slate-800 */
+}
+html.dark .table-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #475569; /* slate-600 */
+    border-radius: 4px;
+}
+html.dark .table-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #64748b; /* slate-500 */
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Hide spin buttons on number inputs */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Style for date/time picker in dark mode */
+html.dark input[type="date"],
+html.dark input[type="time"] {
+    color-scheme: dark;
+}
